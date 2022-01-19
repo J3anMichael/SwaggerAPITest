@@ -47,7 +47,7 @@ namespace DBMKSwaggerAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutDBMK(long id, DBMK dBMK)
         {
-            if (id != dBMK.Id)
+            if (id != dBMK.PedidoId)
             {
                 return BadRequest();
             }
@@ -81,7 +81,7 @@ namespace DBMKSwaggerAPI.Controllers
             _context.DBMK.Add(dBMK);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetDBMK", new { id = dBMK.Id }, dBMK);
+            return CreatedAtAction("GetDBMK", new { id = dBMK.PedidoId }, dBMK);
         }
 
         // DELETE: api/DBMKItems/5
@@ -102,7 +102,7 @@ namespace DBMKSwaggerAPI.Controllers
 
         private bool DBMKExists(long id)
         {
-            return _context.DBMK.Any(e => e.Id == id);
+            return _context.DBMK.Any(e => e.PedidoId == id);
         }
     }
 }
