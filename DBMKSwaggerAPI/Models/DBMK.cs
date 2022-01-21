@@ -2,8 +2,9 @@
 {
     public class DBMK
     {
-        public long PedidoId { get; set; }
-        public string? Nome { get; set; }
-        public string Sobre { get; set; }
+        public long Id { get; set; }
+        public string? NomeLoja { get; set; }
+        public string ProdutoId { get; set; }
+        public string ProdutoNome { get; set; }
     }
 }
